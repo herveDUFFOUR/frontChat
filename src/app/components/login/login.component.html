@@ -1,7 +1,37 @@
-<form [formGroup]= "loginForm">
-  <label for="login">Login : </label>
-  <input name="login" formControlName="login">
-  <label for="password">Password : </label>
-  <input name="password" formControlName="password">
-  <button (click)="login()">Connexion</button>
-</form>
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col"></div>
+    <div class="col"> 
+        <form [formGroup]= "loginForm">
+          <div class="mb-3">
+            <div class="row">
+              <div class="col">
+                <label for="login" class="form-label">Login : </label>
+              </div>
+              <div class="col">
+                <input name="login" formControlName="login" class="form-controle">
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-3">
+            <div class="row">
+              <div class="col">
+                <label for="password" class="form-label">Password : </label>
+              </div>
+              <div class="col">
+                <input name="password" type="password" formControlName="password"class="form-controle">
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-3">
+            <button (click)="login()" class="btn btn-success">Connexion</button>
+          </div>
+        </form>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+
+
