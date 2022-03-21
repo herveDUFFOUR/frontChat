@@ -36,11 +36,20 @@ export class LoginComponent implements OnInit {
 
     this.loginSub = this.userService.login(user).subscribe(
       (response : HttpResponse<any>) => {
-        console.log(response.headers)
-        console.log(response.headers.get('Authorization'))
 
-        if(response.status == 200){
-          this.router.navigate(['users']);
+        if(response.status == 200 && response.headers != null && response.headers.get('Authorization') != null){
+
+          const token: string | null =  response.headers.get('Authorization')
+
+          console.log(response.headers.get('Authorization'))
+          console.log({token: token})
+
+          if(token){
+
+            localStorage.setItem('token',token);
+            this.router.navigate(['users']);
+          }
+
         }
       }
     )
