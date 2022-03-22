@@ -20,6 +20,7 @@ export class UsersComponent implements OnInit {
 
           if(response.status == 200){
             console.log(response)
+            console.log(response.body)
           }
         })
   }
